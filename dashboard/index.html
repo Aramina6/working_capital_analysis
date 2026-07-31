@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Working Capital Excellence · Executive Scorecard</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <div class="brand">
+        <div class="mark-box">WC</div>
+        <div>
+          <div class="brand-title">Working Capital Excellence</div>
+          <div class="brand-sub">Executive scorecard · Global manufacturing · Aluminium &amp; power composition models</div>
+        </div>
+      </div>
+      <div class="top-meta">
+        <a class="pill" href="../solution/" style="text-decoration:none">Solution deck</a>
+        <a class="pill" href="../" style="text-decoration:none">Hub</a>
+        <span class="pill">Goal: <strong>Reduce Net Working Capital</strong></span>
+        <span class="pill muted" id="asOf">As of —</span>
+      </div>
+    </header>
+
+    <nav class="tabs">
+      <a class="tab active" href="#overview">Overview</a>
+      <a class="tab" href="#primer">Finance primer</a>
+      <a class="tab" href="#frameworks">Frameworks</a>
+      <a class="tab" href="#industry">Aluminium &amp; power</a>
+      <a class="tab" href="#why">Why &amp; cadence</a>
+      <a class="tab" href="#trends">5-year trends</a>
+      <a class="tab" href="#scenario">Revenue scenario</a>
+      <a class="tab" href="#initiatives">Initiatives</a>
+      <a class="tab" href="#team">Team</a>
+      <a class="tab" href="#brd">Requirements</a>
+    </nav>
+
+    <!-- Targets strip with FULL FORMS -->
+    <section class="targets-strip" id="overview">
+      <div class="target-card">
+        <div class="target-label">Net Working Capital</div>
+        <div class="target-dir reduce">Reduce</div>
+        <div class="target-goal">$2.40B → <strong>$1.95B</strong></div>
+        <div class="target-note">−$450 million cash to release</div>
+      </div>
+      <div class="target-card">
+        <div class="target-label">Cash Conversion Cycle (days)</div>
+        <div class="target-dir reduce">Shorten</div>
+        <div class="target-goal">→ <strong>≤ 58 days</strong></div>
+        <div class="target-note">Days cash is locked in operations</div>
+      </div>
+      <div class="target-card">
+        <div class="target-label">Days Inventory Outstanding · Days Sales Outstanding</div>
+        <div class="target-dir reduce">Reduce</div>
+        <div class="target-goal">Safer lean + faster collect</div>
+        <div class="target-note">Stock velocity · customer / offtaker payment speed</div>
+      </div>
+      <div class="target-card">
+        <div class="target-label">Days Payable Outstanding</div>
+        <div class="target-dir extend">↑ Careful extend</div>
+        <div class="target-goal">Supply Chain Finance · supplier health</div>
+        <div class="target-note">Longer fair terms without starving suppliers</div>
+      </div>
+      <div class="target-card wide">
+        <div class="target-label">Net Working Capital as % of revenue</div>
+        <div class="target-dir reduce">Reduce</div>
+        <div class="target-goal">Even if revenue softens over 5 years</div>
+        <div class="target-note">Intensity of cash use must fall when the top line is under pressure</div>
+      </div>
+    </section>
+
+    <section class="hero-strip">
+      <div class="stat-card">
+        <div class="stat-label">Net Working Capital</div>
+        <div class="stat-value" id="nwc">—</div>
+        <div class="stat-delta good" id="nwcDelta">—</div>
+        <div class="stat-hint">Inventory + Accounts Receivable − Accounts Payable · lower frees cash</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Cash Conversion Cycle</div>
+        <div class="stat-value" id="ccc">—</div>
+        <div class="stat-delta good" id="cccDelta">—</div>
+        <div class="stat-hint">Days Inventory Outstanding + Days Sales Outstanding − Days Payable Outstanding</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Cash released (year to date)</div>
+        <div class="stat-value accent" id="cashRel">—</div>
+        <div class="stat-delta" id="cashTarget">—</div>
+        <div class="stat-hint">Program return vs $450M release ambition</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Net Working Capital % of revenue</div>
+        <div class="stat-value" id="nwcPct">—</div>
+        <div class="stat-delta" id="nwcPctTarget">—</div>
+        <div class="stat-hint">Critical when revenue softens</div>
+      </div>
+    </section>
+
+    <!-- Finance primer -->
+    <section class="panel" id="primer">
+      <div class="panel-head">
+        <h2>Finance primer</h2>
+        <span class="badge">Full forms · formulas</span>
+      </div>
+      <p class="panel-lead">
+        <strong>Working capital</strong> is money tied up in day-to-day operations.
+        <strong>Net Working Capital</strong> answers: “How much of our own cash is stuck in the pipeline between buying inputs and collecting from customers?”
+      </p>
+
+      <div class="formula-box">
+        <div class="formula-title">Operating formula</div>
+        <code>Net Working Capital = Inventory + Accounts Receivable − Accounts Payable</code>
+        <code>Cash Conversion Cycle (days) = Days Inventory Outstanding + Days Sales Outstanding − Days Payable Outstanding</code>
+      </div>
+
+      <div class="glossary-grid">
+        <div class="gloss-card">
+          <div class="abbr">NWC</div>
+          <div class="full">Net Working Capital</div>
+          <p>Inventory + unpaid customer invoices − unpaid supplier bills. Primary reduction target.</p>
+        </div>
+        <div class="gloss-card">
+          <div class="abbr">CCC</div>
+          <div class="full">Cash Conversion Cycle</div>
+          <p>How many days cash is locked from buying inputs until customers pay. Shorter is better.</p>
+        </div>
+        <div class="gloss-card">
+          <div class="abbr">DIO</div>
+          <div class="full">Days Inventory Outstanding</div>
+          <p>Average days stock sits before sale or consumption. (Average Inventory ÷ Cost of Goods Sold) × 365.</p>
+        </div>
+        <div class="gloss-card">
+          <div class="abbr">DSO</div>
+          <div class="full">Days Sales Outstanding</div>
+          <p>Average days after a sale until the customer or offtaker pays. (Average Receivables ÷ Revenue) × 365.</p>
+        </div>
+        <div class="gloss-card">
+          <div class="abbr">DPO</div>
+          <div class="full">Days Payable Outstanding</div>
+          <p>Average days you take to pay suppliers. Extending carefully improves cash — without harming critical partners.</p>
+        </div>
+        <div class="gloss-card">
+          <div class="abbr">SCF</div>
+          <div class="full">Supply Chain Finance</div>
+          <p>Bank pays suppliers early; you still pay on longer terms. Supports higher Days Payable Outstanding with supplier health.</p>
+        </div>
+        <div class="gloss-card">
+          <div class="abbr">AR / AP</div>
+          <div class="full">Accounts Receivable / Accounts Payable</div>
+          <p>Receivable = customers owe you. Payable = you owe suppliers (a temporary cash benefit).</p>
+        </div>
+        <div class="gloss-card">
+          <div class="abbr">RM · WIP · FG</div>
+          <div class="full">Raw Materials · Work-in-Progress · Finished Goods</div>
+          <p>Stages of manufacturing inventory. Power plants emphasize fuel and strategic spares instead of finished goods.</p>
+        </div>
+      </div>
+
+      <div class="pipeline">
+        <div class="pipe-step">Buy inputs</div>
+        <div class="pipe-arrow">→</div>
+        <div class="pipe-step">Make / store</div>
+        <div class="pipe-arrow">→</div>
+        <div class="pipe-step">Sell on credit</div>
+        <div class="pipe-arrow">→</div>
+        <div class="pipe-step">Collect cash</div>
+      </div>
+      <p class="panel-lead center-note">Cash goes out early and comes back late. Net Working Capital measures the gap. Suppliers partly finance it via Accounts Payable.</p>
+    </section>
+
+    <!-- Frameworks -->
+    <section class="panel" id="frameworks">
+      <div class="panel-head">
+        <h2>Decision frameworks</h2>
+        <span class="badge">Issue tree · value tree · prioritization</span>
+      </div>
+      <div class="fw-grid">
+        <div class="fw-card">
+          <h3>1. Issue tree — where is cash trapped?</h3>
+          <pre class="tree">Reduce Net Working Capital
+├── Inventory $ (Raw materials / Work-in-progress /
+│               Finished goods · Fuel &amp; spares)
+├── Accounts Receivable $ (terms, disputes, credit, unbilled)
+└── Accounts Payable $ (terms, calendar, Supply Chain Finance)</pre>
+          <p class="fw-note">Mutually exclusive buckets under the operating definition — every dollar maps to one branch.</p>
+        </div>
+        <div class="fw-card">
+          <h3>2. Value tree — how cash returns</h3>
+          <pre class="tree">Free Cash Flow
+└── Δ Net Working Capital (reduction = cash in)
+    ├── ↓ Days Inventory Outstanding
+    ├── ↓ Days Sales Outstanding
+    └── ↑ Days Payable Outstanding (guardrails)</pre>
+          <p class="fw-note">Each initiative must map to one node and one day-metric.</p>
+        </div>
+        <div class="fw-card">
+          <h3>3. Impact × Effort × Risk</h3>
+          <table class="data-table compact">
+            <thead><tr><th></th><th>High cash impact</th><th>Medium impact</th></tr></thead>
+            <tbody>
+              <tr><td>Low risk</td><td><strong>Do first</strong></td><td>Quick wins</td></tr>
+              <tr><td>Medium risk</td><td>Pilot</td><td>Sequence later</td></tr>
+              <tr><td>High risk</td><td>Only with sponsor + floors</td><td>Avoid first wave</td></tr>
+            </tbody>
+          </table>
+          <p class="fw-note">Guardrails: reliability floors, strategic supplier health, billing compliance.</p>
+        </div>
+        <div class="fw-card">
+          <h3>4. Dual scorecard (soft revenue)</h3>
+          <ul class="why-list">
+            <li><strong>Net Working Capital $</strong> — absolute cash on the balance sheet</li>
+            <li><strong>Net Working Capital % of revenue</strong> — intensity when sales soften</li>
+            <li><strong>Cash Conversion Cycle (days)</strong> — process efficiency</li>
+          </ul>
+          <p class="fw-note">If revenue falls and day-metrics stay flat, intensity often worsens first.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Industry composition -->
+    <section class="panel" id="industry">
+      <div class="panel-head">
+        <h2>Composition of working capital — aluminium &amp; power</h2>
+        <span class="badge">Manufacturing · generation</span>
+      </div>
+      <p class="panel-lead">Same formula, different shape of the balance sheet across industrial models.</p>
+
+      <div class="industry-grid">
+        <div class="industry-card">
+          <h3>Aluminium (smelting &amp; semis)</h3>
+          <p class="industry-tag">Commodity + energy intensive manufacturing</p>
+          <table class="data-table">
+            <thead><tr><th>Component</th><th>What it is</th><th>Why large</th></tr></thead>
+            <tbody>
+              <tr><td>Raw materials</td><td>Alumina, carbon anodes, alloys, scrap</td><td>Global prices; freight; smelter feed cover</td></tr>
+              <tr><td>Work-in-progress</td><td>Metal in potlines / cast house / rolling</td><td>Continuous process; cannot empty casually</td></tr>
+              <tr><td>Finished goods</td><td>Ingots, billets, coil, extrusions</td><td>Call-offs; logistics to ports</td></tr>
+              <tr><td>In-transit</td><td>Ocean / rail metal and alumina</td><td>Long global lanes</td></tr>
+              <tr><td>Accounts Receivable</td><td>Original equipment manufacturers, distributors, traders</td><td>30–90 day trade credit; export mix</td></tr>
+              <tr><td>Accounts Payable</td><td>Alumina, power, anodes, logistics</td><td>Large strategic invoices</td></tr>
+            </tbody>
+          </table>
+          <div class="callout tight">
+            <strong>Typical pain:</strong> commodity price × cover days inflates inventory dollars.
+            Power is a huge <em>input cost</em>, not the product.
+          </div>
+        </div>
+
+        <div class="industry-card">
+          <h3>Power plant / generation fleet</h3>
+          <p class="industry-tag">Fuel · spares · offtaker collections</p>
+          <table class="data-table">
+            <thead><tr><th>Component</th><th>What it is</th><th>Why large</th></tr></thead>
+            <tbody>
+              <tr><td>Fuel inventory</td><td>Coal, gas storage, oil, biomass</td><td>Security of generation; price risk in physical form</td></tr>
+              <tr><td>Strategic spares (MRO)</td><td>Turbine parts, transformers, long-lead items</td><td>Outage insurance vs. cash stuck for years</td></tr>
+              <tr><td>Consumables</td><td>Water treatment, lubricants, reagents</td><td>Continuous operations</td></tr>
+              <tr><td>Outage work-in-progress</td><td>Major overhaul projects mid-flight</td><td>Planned downtime capitalization / aging</td></tr>
+              <tr><td>Accounts Receivable</td><td>Utilities, power purchase agreements, merchant sales</td><td>Often the largest working-capital item</td></tr>
+              <tr><td>Unbilled revenue</td><td>Energy delivered, not yet invoiced</td><td>Meter-to-cash timing gap</td></tr>
+              <tr><td>Accounts Payable</td><td>Fuel, operations &amp; maintenance, contractors</td><td>Offsets purchases; fuel terms can be tight</td></tr>
+            </tbody>
+          </table>
+          <div class="callout tight">
+            <strong>Typical pain:</strong> slow offtaker collections (Days Sales Outstanding).
+            Electricity is not “finished goods on a shelf.”
+          </div>
+        </div>
+      </div>
+
+      <table class="data-table" style="margin-top:16px">
+        <thead>
+          <tr>
+            <th>Dimension</th>
+            <th>Aluminium</th>
+            <th>Power</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Dominant inventory</td>
+            <td>Raw materials + metal finished goods + logistics</td>
+            <td>Fuel + strategic maintenance spares</td>
+          </tr>
+          <tr>
+            <td>Finished goods</td>
+            <td>High (sellable metal shapes)</td>
+            <td>Low (energy not warehoused)</td>
+          </tr>
+          <tr>
+            <td>#1 cash issue (typical)</td>
+            <td>Commodity price × inventory cover</td>
+            <td>Offtaker / receivable delays</td>
+          </tr>
+          <tr>
+            <td>Shared formula</td>
+            <td colspan="2">Net Working Capital = Inventory + Accounts Receivable − Accounts Payable</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <div class="grid-2">
+      <section class="panel" id="why">
+        <div class="panel-head">
+          <h2>Why this analysis exists</h2>
+          <span class="badge">Business case</span>
+        </div>
+        <ul class="why-list">
+          <li><strong>Cash trapped in operations</strong> — manufacturing inventory and long business-to-business credit terms.</li>
+          <li><strong>Global commodities</strong> — price spikes inflate inventory dollars and cover-day habits.</li>
+          <li><strong>Five-year softer revenue</strong> — static policy raises Net Working Capital % of revenue and crushes Free Cash Flow.</li>
+          <li><strong>Capital allocation</strong> — leadership needs cash for Capital Expenditure, de-lever, resilience.</li>
+          <li><strong>One language</strong> — Treasury, Financial Planning &amp; Analysis, Operations, Procurement align on the Cash Conversion Cycle.</li>
+        </ul>
+        <div class="callout">
+          <strong>Best practice:</strong> Reduce excess Net Working Capital and shorten the Cash Conversion Cycle
+          (lower Days Inventory Outstanding and Days Sales Outstanding; extend Days Payable Outstanding carefully via terms or Supply Chain Finance).
+          Temporary builds only when intentional and time-boxed.
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head">
+          <h2>Analysis cadence</h2>
+          <span class="badge">Operating rhythm</span>
+        </div>
+        <table class="data-table" id="freqTable">
+          <thead>
+            <tr><th>Cadence</th><th>Focus</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+    </div>
+
+    <section class="panel">
+      <div class="panel-head">
+        <h2>Working capital components &amp; cycle days</h2>
+        <span class="badge">Live scorecard</span>
+      </div>
+      <div class="kpi-row" id="componentKpis"></div>
+      <div class="bars" id="cycleBars"></div>
+      <p class="panel-lead" style="margin-top:12px;margin-bottom:0">
+        <strong>Days Inventory Outstanding</strong> · <strong>Days Sales Outstanding</strong> · <strong>Days Payable Outstanding</strong>
+        — the three building blocks of the Cash Conversion Cycle.
+      </p>
+    </section>
+
+    <section class="panel" id="trends">
+      <div class="panel-head">
+        <h2>Five-year history — revenue softens; program reduces Net Working Capital</h2>
+        <span class="badge">FY2022–FY2026</span>
+      </div>
+      <div class="chart-wrap">
+        <canvas id="trendChart" height="120"></canvas>
+      </div>
+      <div class="legend">
+        <span><i class="swatch rev"></i> Revenue ($M)</span>
+        <span><i class="swatch nwc"></i> Net Working Capital ($M)</span>
+        <span><i class="swatch ccc"></i> Cash Conversion Cycle (days)</span>
+      </div>
+      <table class="data-table compact" id="yearTable">
+        <thead>
+          <tr>
+            <th>FY</th>
+            <th>Revenue</th>
+            <th>Net Working Capital</th>
+            <th>NWC %</th>
+            <th>Cash Conversion Cycle</th>
+            <th>Days Inventory Outstanding</th>
+            <th>Days Sales Outstanding</th>
+            <th>Days Payable Outstanding</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <section class="panel" id="scenario">
+      <div class="panel-head">
+        <h2>Downside revenue path (FY26–30) — static vs optimized policy</h2>
+        <span class="badge warn">Scenario</span>
+      </div>
+      <p class="panel-lead">
+        If revenue declines and policies stay static, <strong>Net Working Capital as % of revenue rises</strong>.
+        Optimized management keeps intensity falling — protecting cash when profit and loss is under pressure.
+      </p>
+      <div class="chart-wrap">
+        <canvas id="scenarioChart" height="110"></canvas>
+      </div>
+      <div class="legend">
+        <span><i class="swatch bad"></i> Net Working Capital % — static policy</span>
+        <span><i class="swatch good"></i> Net Working Capital % — optimized</span>
+        <span><i class="swatch rev"></i> Revenue ($M)</span>
+      </div>
+    </section>
+
+    <div class="grid-2">
+      <section class="panel">
+        <div class="panel-head">
+          <h2>Regional Net Working Capital</h2>
+          <span class="badge">Global footprint</span>
+        </div>
+        <div id="regionCards" class="region-cards"></div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head">
+          <h2>Commodity inventory cover</h2>
+          <span class="badge">Input risk</span>
+        </div>
+        <table class="data-table" id="commodityTable">
+          <thead>
+            <tr><th>Family</th><th>Inventory $M</th><th>Cover days</th><th>Price year-over-year</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+    </div>
+
+    <section class="panel" id="initiatives">
+      <div class="panel-head">
+        <h2>Initiative tracker — path to cash release</h2>
+        <span class="badge">Execution</span>
+      </div>
+      <div id="initList" class="init-list"></div>
+    </section>
+
+    <section class="panel" id="team">
+      <div class="panel-head">
+        <h2>Team collaboration</h2>
+        <span class="badge">Cross-functional</span>
+      </div>
+      <p class="panel-lead">Business Analyst lead orchestrates; Chief Financial Officer sponsors; domain owners execute levers on the issue tree.</p>
+      <div id="teamGrid" class="team-grid"></div>
+    </section>
+
+    <section class="panel" id="brd">
+      <div class="panel-head">
+        <h2>Requirements snapshot</h2>
+        <span class="badge">Governance</span>
+      </div>
+      <div class="brd-grid">
+        <div>
+          <h3>End goal</h3>
+          <p>Reduce Net Working Capital by ~$450 million and Cash Conversion Cycle from 78 → ≤58 days within 24 months, without degrading critical reliability.</p>
+        </div>
+        <div>
+          <h3>Key stakeholders</h3>
+          <p>Chief Financial Officer, Treasury, Financial Planning &amp; Analysis, Operations, Procurement, Credit, Business Unit leaders, Commodity / energy risk, Business Analyst lead.</p>
+        </div>
+        <div>
+          <h3>Timeline</h3>
+          <p>Discover → Requirements → Baseline → Scorecard v1 → Pilot levers → Embed in monthly reviews → Scale five-year plan.</p>
+        </div>
+        <div>
+          <h3>Key metrics provided</h3>
+          <p>Net Working Capital, Days Inventory Outstanding, Days Sales Outstanding, Days Payable Outstanding, Cash Conversion Cycle, Net Working Capital % of revenue, cash released, cover days, regional and commodity cuts.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div>
+        <strong>Working Capital Excellence</strong> · Illustrative industrial finance pack · Aluminium &amp; power composition models
+      </div>
+      <div class="footer-links">
+        <span class="muted-label">Full forms always preferred in board materials</span>
+      </div>
+    </footer>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

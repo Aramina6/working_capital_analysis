@@ -1,0 +1,80 @@
+{
+  "meta": {
+    "company": "Global Manufacturing Co. (Illustrative)",
+    "currency": "USD millions",
+    "as_of": "2026-06-30",
+    "note": "Illustrative sample data for dashboard and analysis demos — replace with ERP feeds in production.",
+    "program_goal": "Reduce net working capital and cash conversion cycle"
+  },
+  "hero": {
+    "nwc": 2140,
+    "nwc_prior_year": 2400,
+    "ccc_days": 64,
+    "ccc_baseline": 78,
+    "nwc_pct_sales": 0.195,
+    "nwc_pct_target": 0.18,
+    "cash_released_ytd": 260,
+    "cash_released_target": 450,
+    "revenue_ltm": 10980,
+    "revenue_ltm_prior": 11850
+  },
+  "components": {
+    "inventory": 1680,
+    "ar": 1420,
+    "ap": 960,
+    "dio": 61,
+    "dso": 47,
+    "dpo": 44
+  },
+  "five_year": [
+    { "fy": 2022, "revenue": 12400, "nwc": 2680, "ccc": 82, "dio": 76, "dso": 54, "dpo": 48, "nwc_pct": 0.216 },
+    { "fy": 2023, "revenue": 12150, "nwc": 2550, "ccc": 80, "dio": 74, "dso": 53, "dpo": 47, "nwc_pct": 0.21 },
+    { "fy": 2024, "revenue": 11850, "nwc": 2400, "ccc": 78, "dio": 72, "dso": 52, "dpo": 46, "nwc_pct": 0.202 },
+    { "fy": 2025, "revenue": 11320, "nwc": 2280, "ccc": 71, "dio": 66, "dso": 49, "dpo": 44, "nwc_pct": 0.201 },
+    { "fy": 2026, "revenue": 10980, "nwc": 2140, "ccc": 64, "dio": 61, "dso": 47, "dpo": 44, "nwc_pct": 0.195 }
+  ],
+  "scenario_downside": [
+    { "fy": 2026, "revenue": 10980, "nwc_static_policy": 2140, "nwc_optimized": 2140, "nwc_pct_static": 0.195, "nwc_pct_optimized": 0.195 },
+    { "fy": 2027, "revenue": 10430, "nwc_static_policy": 2080, "nwc_optimized": 1920, "nwc_pct_static": 0.199, "nwc_pct_optimized": 0.184 },
+    { "fy": 2028, "revenue": 9910, "nwc_static_policy": 2020, "nwc_optimized": 1780, "nwc_pct_static": 0.204, "nwc_pct_optimized": 0.18 },
+    { "fy": 2029, "revenue": 9410, "nwc_static_policy": 1960, "nwc_optimized": 1660, "nwc_pct_static": 0.208, "nwc_pct_optimized": 0.176 },
+    { "fy": 2030, "revenue": 8940, "nwc_static_policy": 1900, "nwc_optimized": 1550, "nwc_pct_static": 0.213, "nwc_pct_optimized": 0.173 }
+  ],
+  "regions": [
+    { "name": "Americas", "nwc": 920, "ccc": 68, "revenue": 4200, "nwc_pct": 0.219 },
+    { "name": "EMEA", "nwc": 710, "ccc": 61, "revenue": 3650, "nwc_pct": 0.195 },
+    { "name": "APAC", "nwc": 510, "ccc": 58, "revenue": 3130, "nwc_pct": 0.163 }
+  ],
+  "commodity_families": [
+    { "name": "Base metals", "inventory": 520, "cover_days": 48, "price_yoy": 0.06 },
+    { "name": "Energy / fuels", "inventory": 280, "cover_days": 22, "price_yoy": -0.08 },
+    { "name": "Chem feedstocks", "inventory": 410, "cover_days": 55, "price_yoy": 0.03 },
+    { "name": "Agri inputs", "inventory": 190, "cover_days": 35, "price_yoy": 0.11 },
+    { "name": "Other RM", "inventory": 280, "cover_days": 40, "price_yoy": 0.02 }
+  ],
+  "initiatives": [
+    { "id": "I-01", "name": "Top-50 past-due AR blitz", "owner": "Credit", "cash_m": 80, "status": "On track", "kpi": "DSO", "progress": 0.72 },
+    { "id": "I-02", "name": "FG / dead stock >180d disposition", "owner": "Ops", "cash_m": 120, "status": "On track", "kpi": "DIO", "progress": 0.55 },
+    { "id": "I-03", "name": "Payment terms + SCF rollout", "owner": "Procurement", "cash_m": 100, "status": "At risk", "kpi": "DPO", "progress": 0.35 },
+    { "id": "I-04", "name": "Commodity cover-day policy bands", "owner": "Commodity Desk", "cash_m": 90, "status": "On track", "kpi": "Inv $", "progress": 0.48 },
+    { "id": "I-05", "name": "Dispute root-cause (invoice quality)", "owner": "AR Ops", "cash_m": 60, "status": "Complete", "kpi": "DSO", "progress": 1.0 }
+  ],
+  "team": [
+    { "role": "Executive Sponsor", "function": "CFO Office", "cadence": "Quarterly steering" },
+    { "role": "BA Lead", "function": "Business Analysis", "cadence": "Daily / weekly" },
+    { "role": "FP&A Partner", "function": "Finance", "cadence": "Monthly pack" },
+    { "role": "Treasury", "function": "Cash & CCC", "cadence": "Weekly flash" },
+    { "role": "Inventory Control", "function": "Operations", "cadence": "Weekly exceptions" },
+    { "role": "Credit & Collections", "function": "Order-to-Cash", "cadence": "Daily past-due" },
+    { "role": "Procurement / CPO", "function": "Source-to-Pay", "cadence": "Biweekly terms" },
+    { "role": "Commodity Risk", "function": "Markets", "cadence": "Weekly price risk" },
+    { "role": "Data Engineering", "function": "IT", "cadence": "Sprint pipeline" }
+  ],
+  "frequency": [
+    { "cadence": "Daily", "focus": "Accounts Receivable aging alerts, critical stockouts, commodity shocks" },
+    { "cadence": "Weekly", "focus": "Cash Conversion Cycle flash, cash bridge, top exceptions" },
+    { "cadence": "Monthly", "focus": "Full Net Working Capital pack, scorecard refresh, root-cause analysis" },
+    { "cadence": "Quarterly", "focus": "Board story, initiative cash return, downside revenue scenarios" },
+    { "cadence": "Annually", "focus": "Policy reset (credit, pay, cover days), five-year plan, target refresh" }
+  ]
+}
